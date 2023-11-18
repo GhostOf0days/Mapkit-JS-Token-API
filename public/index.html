@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapKit JS Token Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>MapKit JS Token Generator</h1>
+    <form id="tokenForm">
+      <input type="text" id="teamId" placeholder="Team ID" required /><br />
+      <input type="text" id="keyId" placeholder="Key ID" required /><br />
+      <input
+        type="text"
+        id="authKey"
+        placeholder="Auth Key (Base64)"
+        required
+      /><br />
+      <input
+        type="number"
+        id="ttl"
+        placeholder="TTL (seconds) - optional"
+      /><br />
+      <input type="text" id="origin" placeholder="Origin URL" /><br />
+      <button type="submit">Generate Token</button>
+    </form>
+
+    <div id="result" style="display: none">
+      <p id="tokenBox"></p>
+      <button onclick="copyToClipboard('#tokenBox')">Copy Token</button>
+      <p id="messageBox"></p>
+      <button onclick="copyToClipboard('#messageBox')">Copy Message</button>
+    </div>
+
+    <script src="tokenGenerator.js"></script>
+  </body>
+</html>
